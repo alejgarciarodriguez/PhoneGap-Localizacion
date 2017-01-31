@@ -20,6 +20,13 @@ var app = {
       maxZoom: 18
     }).addTo(miMapa);
 
+    var circle = L.circle([position.coords.latitude, position.coords.longitude],{
+      color: 'orange',
+      fillColor: 'white',
+      fillOpacity: 0.5,
+      radius: 50000
+    }).addTo(miMapa);
+
     app.pintaMarcador([position.coords.latitude, position.coords.longitude], '¡Estoy aquí!', miMapa);
 
     miMapa.on('click', function(evento){
